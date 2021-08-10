@@ -1,2 +1,2 @@
 # AngyGitMelon
-A repo to test out automated git commands
+A repo to test automated git commands
