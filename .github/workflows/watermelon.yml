@@ -11,4 +11,18 @@ jobs:
       - name: Get Node versions
         run: |
           node -v 
-          npm -v 
+          npm -v
+      - name: Python Commands
+        run: |
+          import platform
+          print("Python says - Hello, world!")
+          print(platform.processor())
+        shell: python
+  windows-world:
+    runs-on: windows-latest
+    steps:
+      - name: Show current working directory
+        run: Get-Location
+      - name: Directory-bash
+        run: pwd
+        shell: bash
