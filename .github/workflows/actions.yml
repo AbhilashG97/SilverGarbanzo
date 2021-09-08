@@ -4,6 +4,8 @@ on:
     push:
     pull_request:
       types: [assigned, opened, closed, reopened]
+    issues:
+      types: [opened, edited, closed, assigned]
 
 jobs:
   Workflow-Actions:
