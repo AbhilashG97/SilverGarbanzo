@@ -6,7 +6,7 @@ jobs:
   Workflow-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello World Action
+      - name: Hello-World-Action
         id: hello-world
         uses: actions/hello-world-javascript-action@v1.1
         with:
