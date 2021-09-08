@@ -6,6 +6,17 @@ jobs:
   Workflow-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Files before checkout
+        run: | 
+          pwd
+          ls -a
+      - name: Checkout Action
+        id: checkout-action
+        uses: actions/checkout@v2
+      - name: Files after checkout
+        run: | 
+          pwd
+          ls -a
       - name: Hello-World-Action
         id: hello-world
         uses: actions/hello-world-javascript-action@v1.1
