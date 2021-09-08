@@ -10,6 +10,6 @@ jobs:
         id: hello-world
         uses: actions/hello-world-javascript-action@v1.1
         with:
-          who-to-greet: Watermelon Sugar'
+          who-to-greet: Watermelon Sugar
       - name: Hello World Output
         run: echo "${{steps.hello-world.outputs.time}}"
