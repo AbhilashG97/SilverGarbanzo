@@ -1,6 +1,9 @@
 name: Actions Workflow
 
-on: [push]
+on: 
+    push:
+    pull_request:
+      types: [assigned, opened, closed, reopened]
 
 jobs:
   Workflow-Actions:
@@ -24,3 +27,7 @@ jobs:
           who-to-greet: Watermelon Sugar
       - name: Hello World Output
         run: echo "${{steps.hello-world.outputs.time}}"
+      - name: Show Environment variables
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
