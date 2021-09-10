@@ -1,7 +1,11 @@
 name: Actions Workflow
 
 on: 
-    push:
+    repository_dispatch:
+      types: [build]
+    # push:
+    schedule:
+      - cron: "0/5 * * * *"
     pull_request:
       types: [assigned, opened, closed, reopened]
     issues:
@@ -33,3 +37,4 @@ jobs:
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
+          echo "${{ github.token }}"
