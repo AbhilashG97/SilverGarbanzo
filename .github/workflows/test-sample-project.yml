@@ -1,0 +1,19 @@
+name: Test Sample Project
+on: push
+jobs:
+  test-sample-project:
+    runs-on: ubuntu-latest
+  defaults:
+    run:
+      working-directory: ./Section-01/sample-project
+  steps:
+    - name: Get Code
+      uses: actions/checkout@v4
+    - name: Install NodeSJ
+      uses: actions/setup-node@v4
+      with:
+        node-version: "lts"
+    - name: Install dependencies
+      run: npm ci
+    - name: Run tests
+      run: npm test
