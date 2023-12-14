@@ -45,4 +45,6 @@ To run jobs in sequential order, use the `needs` keyword.
 
 Have a look at the `deploy-sample-project` workflow for an example.
 
+## Multiple events
 
+GitHub Actions can be triggered for multiple events by passing an array to the `on` keyword.
