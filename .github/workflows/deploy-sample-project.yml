@@ -20,6 +20,9 @@ jobs:
   deploy-sample-project:
     needs: [test-sample-project]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Section-01/sample-project    
     steps:
       - name: Get code
         uses: actions/checkout@v4
