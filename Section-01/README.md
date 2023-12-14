@@ -53,3 +53,6 @@ GitHub Actions can be triggered for multiple events by passing an array to the `
 
 > Contexts are a way to access information about workflow runs, variables, runner environments, jobs, and steps. Each context is an object that contains properties, which can be strings or other objects.
 
+## Summary
+
+<p align="center"><img src ="images/section-1-summary.png" /></p>
