@@ -48,3 +48,8 @@ Have a look at the `deploy-sample-project` workflow for an example.
 ## Multiple events
 
 GitHub Actions can be triggered for multiple events by passing an array to the `on` keyword.
+
+## GitHub Actions Context
+
+> Contexts are a way to access information about workflow runs, variables, runner environments, jobs, and steps. Each context is an object that contains properties, which can be strings or other objects.
+
