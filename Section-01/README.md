@@ -37,3 +37,12 @@ To fetch the code a project, the `checkout` GitHub Action can be used.
 
 :warning: Do check the GitHub Actions [runners page](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) to know about the software that comes pre-installed with each runner.
 
+:warning: Every job has its own runner and has to be specified for each job.
+
+:warning: By default all jobs are run in parallel.
+
+To run jobs in sequential order, use the `needs` keyword.
+
+Have a look at the `deploy-sample-project` workflow for an example.
+
+
