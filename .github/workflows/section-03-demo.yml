@@ -31,17 +31,13 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: Print Current working directory
-        run: |
-          echo "$PWD"
-          echo "$(ls)"
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with: 
           name: dist-files
           path: |
-            dist
-            package.json
+           ./Section-03/sample-project/dist
+           ./Section-03/sample-project/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
