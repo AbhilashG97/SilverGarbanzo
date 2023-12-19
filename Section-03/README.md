@@ -17,3 +17,45 @@ The relative paths for artifacts are rooted against the current working director
 To download artifacts, the `download-artifact` GitHub Action can be used. 
 
 :warning: This action will unpack all the contents of the zipped artifact in the current working directory of a job.
+
+For a complete example, have a look at [section-03-demo.yaml](../.github/workflows/section-03-demo.yml) file.
+
+## Understanding Job Outputs
+
+<p align="center"><img src ="images/job-output-intro.png" /></p>
+
+:warning: Outputs are Unicode strings, and can be a maximum of 1 MB. The total of all outputs in a workflow run can be a maximum of 50 MB.
+
+More information can be found [here](https://docs.github.com/en/actions/using-jobs/defining-outputs-for-jobs)
+
+Each output is a key-value pair and the key has to be specified in `job.job-id.outputs`. 
+
+Here is an example - 
+
+```yaml
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      publish-script-file: ${{ steps.publish-filename.outputs.script-file }}
+    defaults:
+      run:
+        working-directory: ./Section-03/sample-project
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+      - name: Publish JS filename
+        id: publish-filename
+        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> '$GITHUB_OUTPUT' ;'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo published script-file
+        run: echo "${{ needs.build.outputs.publish-script-file }}"
+```
+
+:warning: While referencing the output of another job, please use the `needs` object and NOT the `jobs` object.
