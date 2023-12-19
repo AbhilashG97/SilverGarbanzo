@@ -2,7 +2,7 @@
 
 ## Introduction to Environment variables
 
-Environment variables can be defined at the workflow level or the job level. The `env` context can be used to define environment variables. 
+Environment variables can be defined at the workflow level, job level or step level. The `env` context can be used to define environment variables. 
 
 Here is an example -
 
@@ -51,3 +51,7 @@ Repository secrets can be referred in a workflow by using the `secrets` context.
 The `environment` keyword can be used to add an environment defined in the GitHub repository.
 
 :warning: Environment has to be defined for each job.
+
+## Summary
+
+<p align="center"><img src ="images/summary.png" /></p>
