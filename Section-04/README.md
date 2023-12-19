@@ -39,3 +39,15 @@ jobs:
 Secrets can be stored at organisation level or repository level
 
 Repository secrets can be referred in a workflow by using the `secrets` context.
+
+## Using Repository Environments
+
+> Environments are used to describe a general deployment target like production, staging, or development. 
+
+> When a workflow job references an environment, the job won't start until all of the environment's protection rules pass. A job also cannot access secrets that are defined in an environment until all the deployment protection rules pass.
+
+<p align="center"><img src ="images/repo-envs.png" /></p>
+
+The `environment` keyword can be used to add an environment defined in the GitHub repository.
+
+:warning: Environment has to be defined for each job.
