@@ -61,3 +61,13 @@ Here is an example -
 :warning: While referencing the output of another job, please use the `needs` object and NOT the `jobs` object.
 
 ## Dependency Caching
+
+<p align="center"><img src ="images/caching-dependencies.png" /></p>
+
+GitHub Actions allows us to cache dependencies so that they are not downloaded over and over again in subsequent jobs. Caching can also be applied to other files and folders that are downloaded/created over and over again.
+
+The `actions/cache` [GitHub Action](https://github.com/actions/cache) can be used to cache items.
+
+The dependencies are cached in a central location and will be made available to subsequent workflows/jobs.
+
+:warning: `action/cache` has to be used in the step before where caching is required.
