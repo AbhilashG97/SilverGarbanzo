@@ -71,3 +71,9 @@ The `actions/cache` [GitHub Action](https://github.com/actions/cache) can be use
 The dependencies are cached in a central location and will be made available to subsequent workflows/jobs.
 
 :warning: `action/cache` has to be used in the step before where caching is required.
+
+:warning: While using cache, make sure to use dynamic keys where the value for the key is tied to the file responsible for maintaining the dependency version(e.g. `deps-node-modules-${{ hashFiles('**/package-lock.json') }}`). This way the cached dependencies get invalidated when the dependencies change.
+
+## Summary
+
+<p align="center"><img src ="images/summary.png" /></p>
